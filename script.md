@@ -1,0 +1,3 @@
+- Install the CLI globally with `npm install -g @angular/cli`
+- `ng new soap-app`
+- `cd soap-app`
