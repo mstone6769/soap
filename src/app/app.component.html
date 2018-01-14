@@ -1,2 +1,10 @@
 <h1 class="h6">Boom</h1>
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.scripture}}
+    {{item.observation}}
+    {{item.application}}
+    {{item.prayer}}
+  </li>
+</ul>
 <router-outlet></router-outlet>
