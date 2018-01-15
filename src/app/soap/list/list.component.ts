@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { SoapService } from '../soap.service';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
 
 
 @Component({
@@ -11,16 +10,10 @@ import 'rxjs/add/operator/map';
 })
 export class ListComponent implements OnInit {
   items: Observable<any>;
-  constructor(private db: AngularFirestore) { }
+  constructor(private service: SoapService) { }
 
   ngOnInit() {
-    this.items = this.db.collection('soap', ref => ref.where('userId', '==', 'i8svxVE3tLhqxQ5eNoQoO2oryhg2')).snapshotChanges().map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data();
-        const id = a.payload.doc.id;
-        return { id, ...data };
-      });
-    });;
+    this.items = this.service.getList();
   }
 
 }

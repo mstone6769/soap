@@ -1,8 +1,17 @@
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    <h2><a [routerLink]="[item.id ]">{{item.scripture}}</a></h2>
-    <p>{{item.observation}}</p>
-    <p>{{item.application}}</p>
-    <p>{{item.prayer}}</p>
-  </li>
-</ul>
+<div class="row pb-3">
+  <div class="col-sm-4"
+    *ngFor="let soap of items | async">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><a [routerLink]="[soap.id]">{{soap.scripture}}</a></h5>
+        <p class="card-text">{{soap.observation}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Feed</li>
+  </ol>
+</nav>

@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firesto
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -11,19 +12,22 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailComponent implements OnInit {
 
   private itemDoc: AngularFirestoreDocument<any>;
-  item: Observable<any>;
+  public soap: Observable<any>;
   constructor(private afs: AngularFirestore, private r: ActivatedRoute) {
     
   }
   update(item: any) {
+    console.log(item);
     this.itemDoc.update(item);
   }
 
   ngOnInit() {
+
     this.r.params.subscribe((params => {
       this.itemDoc = this.afs.doc<any>('soap/'+params.id);
-      this.item = this.itemDoc.valueChanges();
     }));
+
+    this.soap = this.itemDoc.valueChanges();
   }
 
 }
