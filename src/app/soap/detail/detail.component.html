@@ -1,3 +1,7 @@
-<p>
-  detail works!
-</p>
+<div>
+  <a routerLink="../">SOAPs ></a>
+  <h1>{{ (item | async)?.scripture }}</h1>
+  <p>{{(item | async)?.observation}}</p>
+    <p>{{(item | async)?.application}}</p>
+    <p>{{(item | async)?.prayer}}</p>
+</div>

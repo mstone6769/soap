@@ -1,3 +1,8 @@
-<p>
-  list works!
-</p>
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    <h2><a [routerLink]="[item.id ]">{{item.scripture}}</a></h2>
+    <p>{{item.observation}}</p>
+    <p>{{item.application}}</p>
+    <p>{{item.prayer}}</p>
+  </li>
+</ul>
