@@ -20,15 +20,14 @@ export class FormComponent implements OnInit {
   constructor() { }
   @Input() soap: Soap;
 
-  @Output() onUpdate = new EventEmitter<Soap>();
+  @Output() onSubmit = new EventEmitter<Soap>();
 
   ngOnInit() {
   }
 
 
-  update(soap) {
-    console.log('dadf',soap);
-    this.onUpdate.emit(soap);
+  submit(soap) {
+    this.onSubmit.emit(soap);
   }
 
 }

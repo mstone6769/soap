@@ -9,11 +9,16 @@ import { SoapService } from './soap.service';
 import { FormComponent } from './form/form.component';
 import { ViewComponent } from './detail/view/view.component';
 import { EditComponent } from './edit/edit.component';
+import { CreateComponent } from './create/create.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ListComponent
+  },
+  {
+    path: 'create',
+    component: CreateComponent
   },
   {
     path: ':id',
@@ -37,7 +42,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CommonModule
   ],
-  declarations: [ListComponent, DetailComponent, FormComponent, ViewComponent, EditComponent],
+  declarations: [ListComponent, DetailComponent, FormComponent, ViewComponent, EditComponent, CreateComponent],
   providers: [SoapService]
 })
 export class SoapModule { }

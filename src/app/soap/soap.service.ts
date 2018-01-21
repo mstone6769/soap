@@ -21,6 +21,10 @@ export class SoapService {
       });
   }
 
+  getCollection() {
+    return this.db.collection('soap');
+  }
+
   getDoc(id: string): AngularFirestoreDocument<Soap> {
     return this.db.doc<Soap>('soap/'+id);
   }
@@ -30,9 +34,12 @@ export class SoapService {
   }
 
   updateItem(id: string, data: Soap){
-    console.log(data);
-
     return this.getDoc(id).update(data);
   }
+
+  create(data: Soap) {
+    console.log('create', data);
+    return this.getCollection().add(data);
+  } 
 
 }

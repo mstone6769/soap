@@ -31,8 +31,8 @@ export class EditComponent implements OnInit {
 
   update(item: Soap) {
     let id = this.route.snapshot.paramMap.get('id');
-    this.service.updateItem(id, item).subscribe(()=>{
-      this.router.navigate(['../'])
+    this.service.updateItem(id, item).then(()=>{
+      this.router.navigate(['/', 'soap', id])
     });
   }
 

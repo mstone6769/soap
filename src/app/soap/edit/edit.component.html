@@ -1,1 +1,4 @@
-<app-form [soap]="data | async" (onUpdate)="update($event)"></app-form>
+<app-form 
+  [soap]="data | async"
+  (onSubmit)="update($event)">
+</app-form>
