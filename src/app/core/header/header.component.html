@@ -6,7 +6,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" routerLink="/soap" routerLinkActive="active">Feed</a>
+        <a class="nav-item nav-link" routerLink="/soap" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Feed</a>
+        <a class="nav-item nav-link" routerLink="/soap/create" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Create</a>
+
       </div>
       
     </div>
