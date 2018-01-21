@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange } from '@angular/core';
 
-import { Soap } from '../soap';
+import { Soap } from '../models/soap';
 
 @Component({
   selector: 'app-form',

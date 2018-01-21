@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+
+import { Soap } from './models/soap';
 
 @Injectable()
 export class SoapService {
@@ -20,6 +22,10 @@ export class SoapService {
   }
 
   getItem(id: string) {
+    return this.db.doc<Soap>('soap/'+id).valueChanges();
+  }
+
+  mapIds(){
     
   }
 

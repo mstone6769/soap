@@ -1,22 +1,2 @@
-<div>
-  <h6 class="font-weight-normal text-uppercase text-secondary"><small>Scripture</small></h6>
-  <p>{{ (soap | async)?.scripture }}</p>
-  <hr>
-  <h6 class="font-weight-normal text-uppercase text-secondary"><small>Observation</small></h6>
-  <p>{{(soap | async)?.observation}}</p>
-  <hr>
-  <h6 class="font-weight-normal text-uppercase text-secondary"><small>Application</small></h6>
-  <p>{{(soap | async)?.application}}</p>
-  <hr>
-  <h6 class="font-weight-normal text-uppercase text-secondary"><small>Prayer</small></h6>
-  <p>{{(soap | async)?.prayer}}</p>
-</div>
-
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="../">Feed</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{ (soap | async)?.scripture }}</li>
-  </ol>
-</nav>
-
-<app-form [soap]="soap | async" (onUpdate)="update($event)"></app-form>
+<app-view [soap]="data | async"></app-view>
+<app-form [soap]="data | async" (onUpdate)="update($event)"></app-form>

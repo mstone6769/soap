@@ -7,7 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
 import { SoapService } from './soap.service';
 import { FormComponent } from './form/form.component';
-import { DetailResolve } from './detail/detail.resolve';
+import { ViewComponent } from './detail/view/view.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,10 @@ const routes: Routes = [
   },
   {
     path: ':id',
-    component: DetailComponent
+    component: DetailComponent,
+    data: {
+      title: 'boom town'
+    },
   }
 ];
 
@@ -26,7 +30,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CommonModule
   ],
-  declarations: [ListComponent, DetailComponent, FormComponent],
-  providers: [SoapService, DetailResolve]
+  declarations: [ListComponent, DetailComponent, FormComponent, ViewComponent, EditComponent],
+  providers: [SoapService]
 })
 export class SoapModule { }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Soap } from '../models/soap';
+import { SoapService } from '../soap.service';
 
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-detail',
@@ -10,24 +12,22 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
+  data: Observable<Soap>;
+  constructor(
+    private route: ActivatedRoute,
+    private service: SoapService
+  ) {}
 
-  private itemDoc: AngularFirestoreDocument<any>;
-  public soap: Observable<any>;
-  constructor(private afs: AngularFirestore, private r: ActivatedRoute) {
-    
-  }
-  update(item: any) {
-    console.log(item);
-    this.itemDoc.update(item);
-  }
+  // update(item: any) {
+  //   this.itemDoc.update(item);
+  // }
 
   ngOnInit() {
-
-    this.r.params.subscribe((params => {
-      this.itemDoc = this.afs.doc<any>('soap/'+params.id);
-    }));
-
-    this.soap = this.itemDoc.valueChanges();
+    this.data = this.route.paramMap
+      .switchMap(
+        (params: ParamMap) =>
+          this.service.getItem(params.get('id'))
+      );
   }
 
 }
