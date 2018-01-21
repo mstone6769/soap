@@ -21,12 +21,18 @@ export class SoapService {
       });
   }
 
-  getItem(id: string) {
-    return this.db.doc<Soap>('soap/'+id).valueChanges();
+  getDoc(id: string): AngularFirestoreDocument<Soap> {
+    return this.db.doc<Soap>('soap/'+id);
   }
 
-  mapIds(){
-    
+  getItem(id: string): Observable<Soap> {
+    return this.getDoc(id).valueChanges();
+  }
+
+  updateItem(id: string, data: Soap){
+    console.log(data);
+
+    return this.getDoc(id).update(data);
   }
 
 }

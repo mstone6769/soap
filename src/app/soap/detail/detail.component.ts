@@ -18,10 +18,6 @@ export class DetailComponent implements OnInit {
     private service: SoapService
   ) {}
 
-  // update(item: any) {
-  //   this.itemDoc.update(item);
-  // }
-
   ngOnInit() {
     this.data = this.route.paramMap
       .switchMap(

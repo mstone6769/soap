@@ -2,8 +2,9 @@
   *ngIf="soap"
   #soapForm="ngForm"
   (ngSubmit)="update(soap)">
+  
   <div class="form-group">
-    <label for="scripture">Scripture</label>
+    <label class="font-weight-normal text-uppercase text-secondary" for="scripture">Scripture</label>
     <input
       type="text"
       class="form-control"
@@ -11,6 +12,7 @@
       name="scripture"
       [(ngModel)]="soap.scripture">
   </div>
+  <hr>
   <div class="form-check">
     <input
       type="checkbox"
@@ -22,8 +24,9 @@
       for="private"
       class="form-check-label">Private</label>
   </div>
+  <hr>
   <div class="form-group">
-    <label for="application">Application</label>
+    <label class="font-weight-normal text-uppercase text-secondary" for="application">Application</label>
     <textarea
       class="form-control"
       id="application"
@@ -31,8 +34,9 @@
       [(ngModel)]="soap.application">
     </textarea>
   </div>
+  <hr>
   <div class="form-group">
-    <label for="observation">Observation</label>
+    <label class="font-weight-normal text-uppercase text-secondary" for="observation">Observation</label>
     <textarea
       class="form-control"
       id="observation"
@@ -40,8 +44,9 @@
       [(ngModel)]="soap.observation">
     </textarea>
   </div>
+  <hr>
   <div class="form-group">
-    <label for="prayer">Prayer</label>
+    <label class="font-weight-normal text-uppercase text-secondary" for="prayer">Prayer</label>
     <textarea
       class="form-control"
       id="prayer"
@@ -49,7 +54,7 @@
       [(ngModel)]="soap.prayer">
     </textarea>
   </div>
-
+  <hr>
   <button
     type="submit"
     class="btn btn-primary">Update</button>

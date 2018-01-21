@@ -10,6 +10,9 @@ import { Soap } from '../models/soap';
       display: block;
       max-width: 320px;
     }
+    .font-weight-normal {
+      font-size: 12.8px;
+    }
   `]
 })
 export class FormComponent implements OnInit {

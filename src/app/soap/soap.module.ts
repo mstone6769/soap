@@ -21,6 +21,13 @@ const routes: Routes = [
     data: {
       title: 'boom town'
     },
+  },
+  {
+    path: ':id/edit',
+    component: EditComponent,
+    data: {
+      title: 'boom town'
+    },
   }
 ];
 

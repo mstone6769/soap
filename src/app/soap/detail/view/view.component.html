@@ -1,20 +1,21 @@
 <div>
   <h6 class="font-weight-normal text-uppercase text-secondary"><small>Scripture</small></h6>
-  <p>{{ soap.scripture }}</p>
+  <p>{{ soap?.scripture }}</p>
   <hr>
   <h6 class="font-weight-normal text-uppercase text-secondary"><small>Observation</small></h6>
-  <p>{{soap.observation}}</p>
+  <p>{{soap?.observation}}</p>
   <hr>
   <h6 class="font-weight-normal text-uppercase text-secondary"><small>Application</small></h6>
-  <p>{{soap.application}}</p>
+  <p>{{soap?.application}}</p>
   <hr>
   <h6 class="font-weight-normal text-uppercase text-secondary"><small>Prayer</small></h6>
-  <p>{{soap.prayer}}</p>
-</div>
+  <p>{{soap?.prayer}}</p>
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="../">Feed</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{ soap.scripture }}</li>
-  </ol>
-</nav>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="../">Feed</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ soap?.scripture }}</li>
+    </ol>
+  </nav>
+</div>
