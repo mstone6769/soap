@@ -1,16 +1,11 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">SOAP</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <a class="navbar-brand" routerLink="/soap">SOAP</a>
+    <div class="navbar-collapse">
       <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/soap" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Feed</a>
         <a class="nav-item nav-link" routerLink="/soap/create" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Create</a>
-
       </div>
-      
     </div>
     <span class="navbar-text">
       <span *ngIf="afAuth.authState | async as user; else showLogin">
