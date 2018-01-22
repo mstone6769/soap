@@ -11,6 +11,17 @@ export class SoapService {
   constructor(private db: AngularFirestore) { }
 
   getList() {
+    return this.db.collection('soap')
+      .snapshotChanges().map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        });
+      });
+  }
+
+  getUserList() {
     return this.db.collection('soap', ref => ref.where('userId', '==', 'i8svxVE3tLhqxQ5eNoQoO2oryhg2'))
       .snapshotChanges().map(actions => {
         return actions.map(a => {
